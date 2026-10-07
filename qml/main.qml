@@ -7,8 +7,8 @@ ApplicationWindow {
     id: root
 
     visible: true
-    width: 1200
-    height: 800
+    width: 900
+    height: 700
     title: "Sistema Maestro de Herramientas"
 
     //--------------------------------------------------
@@ -42,7 +42,7 @@ ApplicationWindow {
         //--------------------------------------------------
 
         Rectangle {
-            Layout.preferredWidth: 260
+            Layout.preferredWidth: 250
             Layout.fillHeight: true
 
             radius: 28
@@ -50,7 +50,7 @@ ApplicationWindow {
 
             ColumnLayout {
                 anchors.fill: parent
-                anchors.margins: 20
+                anchors.margins: 15
                 spacing: 12
 
                 Text {
@@ -68,8 +68,8 @@ ApplicationWindow {
                     radius: 14
 
                     color: currentPage === 0
-                           ? cPrimary
-                           : "transparent"
+                        ? cPrimary
+                        : "transparent"
 
                     Text {
                         anchors.centerIn: parent
@@ -91,8 +91,8 @@ ApplicationWindow {
                     radius: 14
 
                     color: currentPage === 1
-                           ? cPrimary
-                           : "transparent"
+                        ? cPrimary
+                        : "transparent"
 
                     Text {
                         anchors.centerIn: parent
@@ -167,14 +167,14 @@ ApplicationWindow {
 
                     ColumnLayout {
                         anchors.fill: parent
-                        anchors.margins: 30
-                        spacing: 20
+                        anchors.margins: 20
+                        spacing: 15
 
                         Text {
                             text: "Conversión CSV a XLSX"
 
                             color: cText
-                            font.pixelSize: 38
+                            font.pixelSize: 35
                             font.bold: true
                         }
 
@@ -191,7 +191,7 @@ ApplicationWindow {
                         Rectangle {
 
                             Layout.fillWidth: true
-                            Layout.preferredHeight: 150
+                            Layout.preferredHeight: 230
 
                             radius: 22
                             color: cCard
@@ -213,11 +213,11 @@ ApplicationWindow {
 
                                     TextField {
                                         Layout.fillWidth: true
-
-                                        placeholderText:
-                                            "Selecciona un archivo CSV"
-
+                                        placeholderText: "Selecciona un archivo CSV"
                                         color: cText
+                                        font.pixelSize: 16
+                                        implicitHeight: 44
+                                        verticalAlignment: Text.AlignVCenter
 
                                         background: Rectangle {
                                             radius: 14
@@ -241,6 +241,7 @@ ApplicationWindow {
                                             color: "white"
                                             horizontalAlignment: Text.AlignHCenter
                                             verticalAlignment: Text.AlignVCenter
+                                            font.pixelSize: 16
                                         }
                                     }
                                 }
