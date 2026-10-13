@@ -1,0 +1,47 @@
+# Credenciales y configuración local
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Datos y resultados locales (pueden contener información sensible de la empresa)
+data/
+output/
+salidas/
+logs/
+*.log
+favoritas.json
+perfiles_limpieza.json
+user_data/
+
+# Archivos de datos de trabajo
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+!tests/data/*.csv
+!tests/data/*.xlsx
+
+# IDE y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Empaquetado
+build/
+dist/
+*.spec
+
