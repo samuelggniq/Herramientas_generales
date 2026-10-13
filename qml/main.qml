@@ -9,8 +9,8 @@ ApplicationWindow {
     id: root
 
     visible: true
-    width: 1180
-    height: 780
+    width: 1250
+    height: 700
     minimumWidth: 860
     minimumHeight: 620
     title: "Sistema Maestro de Herramientas"

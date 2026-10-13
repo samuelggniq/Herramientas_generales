@@ -1,0 +1,44 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Compilar ejecutable
+        run: |
+          pyinstaller --onefile main.py
+
+      - name: Preparar paquete de distribucion
+        run: |
+          mkdir dist_package
+          cp dist/main.exe dist_package/mi_programa.exe
+          cp .env.example dist_package/.env.example
+          Compress-Archive -Path dist_package/* -DestinationPath mi_programa_windows.zip
+
+      - name: Publicar Release en GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          files: mi_programa_windows.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
