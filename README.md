@@ -75,13 +75,3 @@ Las credenciales de Oracle viven **exclusivamente** en un archivo `.env` en la r
    python main.py
    ```
 
----
-
-## 🧪 Ejecución de Pruebas Automatizadas
-
-El proyecto incluye una suite de pruebas unitarias y de integración con `pytest` (usando datos de ejemplo en `tests/data/` y dobles/mocks para Oracle sin requerir conexión real):
-
-```powershell
-pytest -v
-```
-
